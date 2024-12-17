@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Example of Array Iteration methods</h3>
+</body>
+<script>
+    //1. Map: Map is a collection of key/value pairs that can use any type of data as a key or value and remember the order of its entries. It is sued to iterate over all the elements in an array, which results in a new array.
+    let arr=[1,2,3,4,5]
+    let result=arr.map(num=>num*2)
+    console.log(result)
+
+    let fruits=['apple','banana','mango']
+    let result_fruits=fruits.map(fruit=>fruit.toUpperCase())
+    console.log(result_fruits)
+
+    let students=[{id:101,name:'John',grade:'A+'},{id:102,name:'Harry',grade:'C'},{id:103,name:'Sam',grade:'B'}]
+    let result_students=students.map(student=>({id:student.id,name:student.name,grade:student.grade}))
+    console.log(result_students)
+
+    let circles=[{radius:1},{radius:2},{radius:3}]
+    let circle_result=circles.map(circle=>Math.PI*Math.pow(circle.radius,2))
+    console.log(circle_result)
+    
+    let numbers=[54,23,90,0,45]
+    let sort_numbers=numbers.sort((a,b)=>(a-b))
+    let result_sort=sort_numbers.map(number=>number)
+    console.log(result_sort)
+
+    //forEach: The forEach method in javascript is to iterate over elements in an array. It takes a callback function as an argument and applies that function to each element of the array, one by one, without creating a new array.
+    let numberss=[1,2,3,4,5]
+    numberss.forEach(numm=>{
+        console.log(numm)
+    })
+
+    numberss.forEach(double=>{
+        console.log(double*2)
+    })
+
+    fruits.forEach(fruitt=>{
+        console.log(fruitt.toUpperCase())
+    })
+
+    let square=[]
+    numberss.forEach(num=>{
+        square.push(num*2)
+    })
+    console.log(square)
+
+    students.forEach(studentt=>{
+        studentt.grade='A'
+    })
+    console.log(students)
+
+    //filter: The filter method in Javascript is used to create a new array containing elements that pass a certain condition. It takes a callback function as an argument and applies that function to each element in the array. The array only includes elements for which the callback function returns true.
+    let results=numbers.filter(num=>num%2===0)
+    console.log(results)
+
+    let fruits_result=fruits.filter(fruit=>fruit.length<=5)
+    console.log(fruits_result)
+
+    let arrr=[1,null,3,7,9,undefined,0,'a']
+    let arr_result=arrr.filter(value=>value!==null && value!==undefined)
+    console.log(arr_result)
+
+    let products=[{id:101,name:'laptop',price:800},{id:102, name:'Tablet',price:750},{id:103,name:'Mobile',price:500}]
+    let product_res=products.filter(product=>product.price>500)
+    console.log(product_res)
+
+    //Find: The find method in Javasciptis used to return the first element in an array that satisfies a given testing function. It stops execution once such an element is found, and it does not iterate over the entire array. Th find method is particularly useful when you want to locate a specific element in an array based on a condition.
+    let numberse=[1,2,3,4,5,6,7,8]
+    let resultt=numberse.find(num=>num%2===0)
+    console.log(resultt)
+
+    let fruitss=['apple','banana','mango','kiwi','pear','pineapple']
+    let fruitss_res=fruitss.find(fruitte=>fruitte.length<=4)
+    console.log(fruitss_res)
+
+    let product_ress=products.find(productt=>productt.price>500)
+    console.log(product_ress)
+
+    //Some: The some method is used to check if at least one element in an array satisfies a given condition. It returns true if any element passes the test; otherwise, it returns false.
+    let resulte=numberse.some(num=>num%2===0)
+    console.log(resulte)
+
+    let fruitss_resu=fruitss.some(fruitte=>fruitte.length<=4)
+    console.log(fruitss_resu)
+
+    let product_resu=products.some(productt=>productt.price>500)
+    console.log(product_resu)
+
+    //Reduce: The reduce method in Javascript is used to reduce the elements of an array to a single value. It takes a callback function and an initial value.
+    let arre=[1,2,3,4,5]
+    let arre_res=arre.reduce((acc,curr)=>acc+curr,0)
+    console.log(arre_res)
+
+
+</script>
+</html>

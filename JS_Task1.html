@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>For Loop</h3>
+    <p>1. Multiplication table<br>
+       2. Sum of even numbers between 1 and 50</p><br>
+    <h3>While Loop</h3>
+    <p>3. Countdown Timer
+       4. Sum of Odd numbers
+       5. Factorial Calculation
+    </p>   
+</body>
+<script>
+    //1. multiplication table with for loop
+    let number=5
+    for(let i=1;i<=10;i++){
+        let result=number*i
+        console.log(number+'x'+i+'='+result)
+    }
+
+    //2. Sum of even numbers between 1 and 50 using for loop
+    let sum=0
+    for(let j=0;j<=50;j+=2){
+        sum+=j
+        
+    }console.log('Sum of even numbers between 1 and 50 is:',sum)
+
+    //3. Write a program that prints prime numbers from 2 to 20 using a while loop.
+    let pnumbers=2
+    while(pnumbers<=20){
+        if(pnumbers<=3){
+            console.log('Prime number:',pnumbers)
+        }
+        if((pnumbers%2!=0) && (pnumbers%3!=0)){
+            console.log('Prime number:',pnumbers)
+            
+        }pnumbers++
+    }
+
+    //4. Write a program that calculates and prints the sum of all odd numbers between 1 and 20 using a while loop.
+    let odd=1
+    let summ=0
+    while(odd<=19){
+        
+            summ+=odd
+            
+           
+        odd+=2
+    } console.log('Sum of odd numbers between 1 and 20 is:',summ)
+
+    //Write a program that calculates and prints the factorial of a given number (e.g., 5!) using a while loop.
+//(Factorial of 5 is 5! = 5 x 4 x 3 x 2 x 1 = 120)
+    let numberr=prompt('Enter the number')
+    let x=1
+    let factorial=1
+    if(numberr==1||numberr==0){
+        console.log(1)
+    }
+    while(x<=numberr){
+        factorial=factorial*x
+        x++
+    }console.log(factorial)
+
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Shallow and Deep Copy</h3>
+    <p>Shallow copying creates a new object with references to the same memory locations as the original object</p>
+</body>
+<script>
+    //shallow copy
+    /*let person={
+        name:'John',
+        age:25,
+        address:'Hyd'
+    }
+    console.log('======shallow copy=====')
+    console.log('original obj',person)
+    let newPerson=person
+    console.log('NewPerson',newPerson)
+    newPerson.name='Harry'
+    newPerson.age=35
+    console.log('Original obj',person)
+    console.log('New person obj',newPerson)*/
+
+    //To overcome the problem of copying we have obj.assign and spread operator
+    //Object.assign
+    /*let newPerson=Object.assign({},person)
+    console.log('newPerson with obj.assign',newPerson)
+    newPerson.name='Harry'
+    newPerson.age=36
+    console.log('Original obj after modification',person)
+    console.log('NewPerson with modification',newPerson)*/
+
+    //with spread operator
+    /*let newPerson={...person}
+    console.log('newPerson',newPerson)
+    newPerson.name='Sam'
+    newPerson.age=23
+    console.log('Original obj with spread operator',person)
+    console.log('new person with spread operator',newPerson)*/
+
+    //Limitation of shallow copy it will not work with nested object
+    let person={
+        name:'John',
+        age:25,
+        address:{
+            city:'Hyd',
+            country:'India'
+        }
+
+    }
+    console.log('Original object',person)
+    /*let newPerson={...person}
+    console.log('NewPerson',newPerson)
+    newPerson.address.city='Andhra'
+    console.log('original obj with modification',person)
+    console.log('new obj with modification',newPerson)*/
+
+    //To overcome the problem of nested obj copying we have deep copy
+    //deep copy: JSON parse(JSON.stringify())
+    let newPerson=JSON.parse(JSON.stringify(person))
+    console.log('new person',newPerson)
+    newPerson.address.city='Andhra'
+    console.log('original obj with modification',person)
+    console.log('new obj with modification',newPerson)
+</script>
+</html>

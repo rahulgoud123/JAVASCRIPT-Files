@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Session storage and Local storage</h3>
+    <p>Local storage: Data stored in local storage persists even when the browser is closed and reopened. It remains until explicity cleared by the user or the web application.
+        localStorage is suitable for storing data that needs to be persistent across multiple sessions.
+    </p>
+
+    <p>Data stored in sessionStorage is only available for the duration of the page session. If the user closes the tab or the browser, the data is cleared.</p>
+</body>
+<script>
+    //local storage
+    //set
+    localStorage.setItem('username','John Doe')
+    //get
+    let getUser=localStorage.getItem('username')
+    console.log('Username:',getUser)
+
+    //remove
+    localStorage.removeItem('username')
+    //clear: It clears the complete data
+    localStorage.clear()
+
+    //session storage
+    sessionStorage.setItem('user','Harry')
+    let getData=sessionStorage.getItem('user')
+    console.log('User data',getData)
+
+    sessionStorage.removeItem('user')
+    sessionStorage.clear()
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Js Programs</h3>
+    <p></p>
+</body>
+<script>
+    //1. Write a javascript program to compute the sum of the two given integers. If the two valus are the same, then return triple their sum.
+    function sum(x,y){
+        if(x==y){
+            return 3*(x+y);
+        }else{
+            return x+y;
+        }
+    }console.log(sum(20,10))
+    console.log(sum(10,10))
+
+    //2. Write a javascript program to check whether a given positive number is a multiple of 3 or 7.
+    function multiple(number){
+        if(number%3==0 || number%7==0){
+            return true;
+        }else{
+            return false;
+        }
+    }console.log(multiple(21))
+    console.log(multiple(18))
+    console.log(multiple(50))
+
+    //3. Write a javascript program to check whether the two numbers are in the range 40..60 or 70..100 inclusive.
+    function range(a,b){
+        if((a>=40 && a<=60 && b>=40 && b<=60) || (a>=70 && a<=100 && b>=70 && b<=100) || (a>=40 && a<=60 && b>=70 && b<=100) || (a>=70 && a<=100 && b>=40 && b<=100)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }console.log(range(50,42))
+
+    //4. Write a javascript program to check it contains vowel or not.
+    function vowelcheck(str){
+        str=str.toLowerCase();
+        if(str==='a'||str==='e'||str==='i'||str==='o'||str==='u'){
+            return "Str is vowel";
+        }else{
+            return "Str is not vowel";
+        }
+    }console.log(vowelcheck("I"))
+    console.log(vowelcheck("b"))
+    console.log(vowelcheck("z"))
+
+    //5. Write a javascript program to check it contains prime or not.
+    function prime(num){
+        if(num<1){
+            return "Not a prime number";
+        }
+        for(let i=2;i<num;i++){
+            if(num%2===0){
+                return "Not a prime number"
+            }
+        }
+        return "Prime Number"
+    }console.log(prime(7))
+    console.log(prime(4))
+
+    //6. Write a javascript program to find the factorial of a number.
+    function factorial(n){
+        if(n===1||n===0){
+            return 1;
+        }else{
+            return n*factorial(n-1);
+        }
+    }console.log(factorial(5))
+    
+
+</script>
+</html>

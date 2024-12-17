@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Functions without parameters.</h3>
+    <h3>Functions with parameters.</h3>
+    <h3>Functions with return statements.</h3>
+    <h3>Combining Functions.</h3>
+    <h3>Default parameters.</h3>
+</body>
+<script>
+    //1. Write a function named `greet` that prints "Hello, World!" to the console.
+    function greet(){
+        console.log('Hello World!')
+    }greet()
+
+    //2.  Write a function named `addNumbers` that takes two parameters, `a` and `b`. Inside the function, print the sum of `a` and `b`. Call the `addNumbers` function with different sets of numbers to demonstrate its functionality.
+    function addNumbers(a,b){
+        console.log(a+b)
+    }addNumbers(5,6)
+
+    //3.  Write a function named `multiply` that takes two parameters, `x` and `y`. Inside the function, return the product of `x` and `y`. Store the returned value in a variable and print it to the console to ensure the function works as expected.
+    function multiply(x,y){
+        return x*y;
+    }let mul=multiply(4,5)
+    console.log(mul)
+
+    //4. Write a function named `calculateRectangleArea` that takes two parameters, `length` and `width`. Inside the function, use the `multiply` function from the previous task to calculate the area of the rectangle and return the result. Call the `calculateRectangleArea` function and print the result to the console.
+    function calculateRectangleArea(length,width){
+        return multiply(length,width);
+    }let area=calculateRectangleArea(8,9)
+    console.log(area)
+
+    //5. Write a function named `greetUser` that takes one parameter, `name`, with a default value of "Guest". Inside the function, print a message saying "Hello, [name]!". Call the `greetUser` function with and without passing an argument to demonstrate the default parameter functionality.
+    function greetUser(name,age=22){
+        return "Hello"+" "+name+" "+age;
+    }let guest=greetUser("Rahul")
+    console.log(guest)
+
+
+
+</script>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    /*Dynamic Rating*/
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        background-color: #f4f4f4;
+    }
+    .rating{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+    .star{
+        font-size: 50px;
+        color: gray;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+    .star:hover{
+        color:gold
+    }
+    .active{
+        color:gold
+    }
+    #rating-value{
+        margin-top: 10px;
+        font-size: 24px;
+    }
+   .butt{
+        margin-left: 0px;
+    }
+    .mov{
+        margin-left: 120px;
+    }
+    .container{
+        border: 1px solid black;
+        text-align: center;
+        padding: 20px;
+    }
+   
+</style>
+<body>
+    <!--Dynamic Rating-->
+    <div class="rating">
+        <span data-value="5" class="star"><i class="bi bi-star-fill"></i></span>
+        <span data-value="4" class="star"><i class="bi bi-star-fill"></i></span>
+        <span data-value="3" class="star"><i class="bi bi-star-fill"></i></span>
+        <span data-value="2" class="star"><i class="bi bi-star-fill"></i></span>
+        <span data-value="1" class="star"><i class="bi bi-star-fill"></i></span>
+    </div>
+    <p id="rating-value">Rating: 0</p><br><br>
+    
+
+    <!--BMI Calculator-->
+    <h3>BMI Calculator</h3>
+    <div class="container">
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" name="weight" placeholder="Enter your weight in kg" />
+        <span id="weightErr" class="error"></span>
+        <label for="height">Height:</label>
+        <input type="number" id="height" name="height" placeholder="Enter your height in m" />
+        <span id="heightErr" class="error"></span><br><br>
+        <button onclick="calculatebmi()" class="butt">Calculate BMI</button><br><br>
+       <div class="result" id="result">
+       </div>
+    </div>
+</body>
+<script>
+    const stars=document.querySelectorAll('.star')
+    const ratingValue=document.getElementById('rating-value')
+
+    let currentRating=0
+
+    stars.forEach(star=>{
+        star.addEventListener('mouseover',()=>{
+            highlightStars(star.dataset.value)
+        });
+        star.addEventListener('click',()=>{
+            currentRating=star.dataset.value
+            ratingValue.textContent=`Rating: ${currentRating}`;
+            setRating(currentRating);
+        });
+        star.addEventListener('mouseleave',()=>{
+        highlightStars(currentRating);
+        });
+    });
+     function highlightStars(rating){
+     stars.forEach(star=>{
+     star.classList.toggle('active',star.dataset.value <= rating);
+     });
+     }
+     function setRating(rating){
+     highlightStars(rating);
+     }
+
+     //BMI Calculator
+     function calculatebmi(){
+        const weight=parseFloat(document.getElementById('weight').value)
+        const heightcm=parseFloat(document.getElementById('height').value)
+
+        if(isNaN(weight) || isNaN(heightcm)){
+            document.getElementById('result').textContent="Please enter valid numbers."
+            return;
+        }
+        
+        const bmi=weight/(heightcm*heightcm)
+        let catergory=''
+
+        if(bmi<18.5){
+            catergory='Under weight'
+        }else if(bmi>=18.5 && bmi<24.9){
+            catergory='Normal weight'
+        }else if(bmi>=25 && bmi<29.9){
+            catergory='Over weight'
+        }else{
+            catergory='Obese'
+        }
+        document.getElementById('result').textContent=`Your BMI is ${bmi.toFixed(2)} (${catergory})`
+
+        
+    }
+     
+</script>
+</html>

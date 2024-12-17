@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Registration form</h3>
+    <form onsubmit="return onSubmit()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" />
+        <span id="nameErr" class="error"></span><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" />
+        <span id="emailErr" class="error"></span><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+        <span id="passwordErr" class="error"></span><br><br>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        function onSubmit(){
+            var name=document.getElementById('name').value;
+            var email=document.getElementById('email').value;
+            var password=document.getElementById('password').value;
+            var nameErr=document.getElementById('nameErr')
+            var emailErr=document.getElementById('emailErr')
+            var passwordErr=document.getElementById('passwordErr')
+            var isValidate=true;
+
+            function emailValidation(email){
+                var result=/\S+\@\S+\.\S+/
+                return result.test(email)
+            }
+            function capitalLetter(password){
+                var result=/[A-Z]/
+                return result.test(password)
+            }
+            function specialChar(password){
+                var result=/[@#$&^!]+/
+                return result.test(password)
+            }
+            if(name==''){
+                nameErr.textContent='Enter the name';
+                isValidate=false
+            }else{
+                nameErr.textContent=''
+            }
+            if(password==''){
+                passwordErr.textContent='Invalid password'
+                isValidate=false
+            }else if(password.length<8){
+                passwordErr.textContent='Your password length should be greater than 8'
+                isValidate=false
+            }else if(!(capitalLetter(password))){
+                passwordErr.textContent='Your password contains at least on capital letter'
+                isValidate=false
+            }else if(!(specialChar(password))){
+                passwordErr.textContent='Your password must contain one special character'
+                isValidate=false
+            }else{
+                passwordErr.textContent=''
+            }
+
+        return isValidate;
+        }
+    </script>
+</body>
+</html>

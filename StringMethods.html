@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //concat: You can concatenate strings using the + operator or the concat method.
+    let str1="Hello"
+    let str2="World"
+    let result=str1+','+str2
+    console.log("result:",result)
+    let resultConcate=str1.concat(',',str2)
+    console.log('result2:',resultConcate)
+
+    //length: The length property gives the length of the string.
+    let str_len="Hello world"
+    console.log("Length:", str_len.length)
+
+    //Accessing characters: Individual characters can be accessed using square brackets and zero-based indexing
+    let char="Hello World"
+    console.log("Accessing L:",char[2])
+    console.log("Accessing W:",char[6])
+    console.log("Accessing D:",char[10])
+    //charAt
+    console.log("Accessing H:",char.charAt(0))
+    console.log("Accessing space:",char.charAt(5))
+
+    //substring: The substring method extracts a portion of string.
+    let str_subString="Hello World"
+    console.log("Substring:",str_subString.substring(1,4))
+    console.log("Extracting Hello:",str_subString.substring(0,5)) 
+    console.log("Extracting rld:",str_subString.substring(8,11)) 
+
+    //indexOf: The indexOf method searches for a substring and returns the index of the first occurance
+    let str_indexOf="Hello World"
+    console.log("Searching o:",str_indexOf.indexOf('o'))
+    console.log("Searching l:",str_indexOf.indexOf('l'))
+
+    //replace: The replace method replaces a specified substring with another.
+    let str_replace="Hello World"
+    console.log("Replacing World:",str_replace.replace('World','Universe'))
+
+    //Changing case: The toUpperCase and toLowerCase methods change the case of the string.
+    let str_upper="hello world"
+    console.log("Changing into upper case:",str_upper.toUpperCase())
+
+    let str_lower="HELLO WORLD"
+    console.log("Changing into lower case:",str_lower.toLowerCase())
+
+    //trim: The trim method removes leading and trailing whitespaces from a string.
+    let str_trim="  Hello World     "
+    console.log("Removing space before and after:",str_trim.trim())
+
+    //String conversion
+    let num=42;
+    console.log("Converting num to str:",num.toString())
+
+    //Slicing: This is similar to substring and it extracts the portion of string
+    let str_slice="Hello World"
+    console.log("Extracting ell:",str_slice.slice(1,4))
+    console.log("Extracting:",str_slice.slice(1))
+
+    //negative indexing
+    console.log("Extracting world:",str_slice.slice(-5,-1))
+    console.log("Extracting:",str_slice.slice(-6))
+    console.log("Extracting world:",str_slice.slice(-10,-7))
+</script>
+</html>

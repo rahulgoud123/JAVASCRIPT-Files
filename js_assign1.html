@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Fibonacci Series</h3>
+    <h3>Conversion of temperature from celsius to farenheit</h3>
+    <h3>Square root of a number</h3>
+    <h3>Generate a integer between two given numbers</h3>
+    <h3>Palindrome</h3>
+</body>
+<script>
+    //1. Write a Javascript program on Fibonacci series.
+    let fib=0
+    let siri=1
+    let next;
+    function fibonacci(num){
+        console.log(0)
+        console.log(1)
+        for(let i=0;i<num;i++){
+            next=fib+siri;
+            fib=siri;
+            siri=next;
+            console.log(next)
+        }
+
+    }console.log(fibonacci(5))
+
+    //2. Write a JavaScript program to convert a temperature from Celsius to Fahrenheit.
+    let celsius=prompt('Enter the temperature in celsius')
+    
+    function celsiustofarenheit(celsius){
+        let farenheit=(celsius*9/5)+32;
+        return farenheit;
+    }let farenheit=celsiustofarenheit(celsius)
+    console.log(celsius+' '+'degree celsius equal to'+' '+farenheit+' '+'degree F')
+
+    //3. Write a javascript program to find square root of number.
+    let number=prompt('Enter the number')
+    function square(number){
+        if(number<0){
+            console.log('Square root of negative numbe is not a real number.')
+        }else{
+            console.log(Math.sqrt(number))
+        }
+    }console.log(square(number))
+
+    //4. Write a JavaScript program to generate a random integer between two given numbers.
+    let min=5
+    let max=10
+    function randominteger(min, max){
+        return Math.floor(Math.random()*(max-min)+min)
+    }console.log(randominteger(min, max))
+
+    //5. Write a javascript program to check if the passed string is palindrome or not.
+    let str='mam'
+    function palindrome(str){
+        let cleanedstr=str.toLowerCase()
+        let reversedstr=cleanedstr.split('').reverse().join('')
+        return cleanedstr==reversedstr;
+    }console.log(palindrome(str))
+</script>
+</html>

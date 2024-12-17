@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Arrow Functions</h3>
+    <h3>Global scope and Local scope</h3>
+    <h3>Closures</h3>
+    <h3>Pure Functions</h3>
+    <h3>Call Stack</h3>
+</body>
+<script>
+    //Arrow Functions
+    //1. Write an arrow function named multiplyByTwo that takes one parameter num and returns the value of num multiplied by 2.
+    const multiplyByTwo=(num)=>{
+        return num*2;
+    }
+    console.log(`Value of a number is: ${multiplyByTwo(2)}`)
+
+    //2. Write an arrow function named isEven that takes one parameter number and returns true if the number is even, otherwise returns false.
+    const iseven=(number)=>{
+        return number%2==0;
+    }
+    console.log(iseven(5))
+
+    //3. Test these functions by calling them with different arguments and printing the results to the console.
+    const test=(a,b)=>console.log(a+b)
+    test(5,4)
+
+    //Global scope and Local scope
+    //1. Create a global variable named globalVar and assign it a value of 10. Write a function named scopeTest that creates a local variable named localVar with a value of 20. Inside scopeTest, try to print both globalVar and localVar to the console. Outside the function, try to print localVar and observe what happens. Reflect on the behavior and explain the concept of global and local scope.
+    var globalVar=10;
+    function scopeTest(){
+        var localVar=20;
+        console.log('Printing global Var inside the function:',globalVar)
+        console.log('Printing local Var inside the function:',localVar)
+
+    }
+    scopeTest()
+   // console.log('Printing local Var outside the function:',localVar)
+
+    //Closures
+    //Write a function named outerFunction that has a variable outerVar with a value of 5. Inside outerFunction, define an inner function named innerFunction that returns the value of outerVar. Return the innerFunction from outerFunction and store the result in a variable named closure. Call closure and print the result to understand how closures work.
+    function outerFunction(){
+        var outerVar=5;
+        function innerFunction(){
+            console.log(outerVar)
+        }
+        innerFunction()
+    }
+    let closure=outerFunction();
+    console.log(closure)
+
+    //Pure Functions
+    //Write a function named sum that takes two parameters, a and b, and returns their sum. Ensure that the function does not modify any external variables. Write a function named multiply that takes two parameters, x and y, and returns their product. Ensure this function is also pure. Explain why these functions are considered pure functions.
+    function sum(a,b){
+        return a+b;
+    }
+    function multiply(x,y){
+        return x*y;
+    }
+    const result1=sum(3,4)
+    const result2=multiply(5,6)
+    console.log("Result1 is:",result1 +" "+"Result2 is:",result2)
+
+    //Call Stack
+    //Create three functions: functionA, functionB, and functionC. Inside functionA, call functionB. Inside functionB, call functionC. Inside functionC, print a message like "In functionC". Call functionA to see the order of execution. Reflect on how the call stack handles function execution and trace the flow of these calls.
+    function functionA(){
+        return functionB();
+    }
+    function functionB(){
+        return functionC();
+    }
+    function fumctionC(){
+        return "In functionC"
+    }
+    functionA()
+</script>
+</html>

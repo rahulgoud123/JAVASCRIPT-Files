@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1.Write a Javascript program that removes the duplicate elements from an array.
+    function removDuplicates(arr){
+        return arr.filter((num,dups)=>arr.indexOf(num)===dups)
+    }
+    const array=[1,2,5,3,4,5,6,1,8]
+    const uniqueArray=removDuplicates(array)
+    console.log(uniqueArray)
+
+    //2.Write a JavaScript program to create a new string without the first and last characters of a given string.
+    function removefstlst(str){
+        if(str.length<=2){
+            return '';
+        }else{
+            return str.slice(1,-1);
+        }
+    } 
+    const inputstr="Bluethunder"
+    console.log(removefstlst(inputstr))
+
+    //3.Write a function that takes an array of strings as input and prints each element to the console using the forEach method.
+    function prt(str){
+        return str.forEach(element=>{
+            console.log(element);
+        })
+    }
+    const stringArray=['apple','banana','mango']
+    prt(stringArray)
+
+    //4.Write a function that takes an array of numbers as input and returns true if any of the numbers are negative, otherwise false, using the some method.
+    function check(arrr){
+        return arrr.some(numm=>numm<0)
+    }
+    const numArray=[1,5,-9,87,-6]
+    const neg=check(numArray)
+    console.log(neg)
+
+    //5.Write a function that takes an array of numbers as input, filters out the even numbers, and then returns the sum of the remaining numbers using a combination of filter and reduce methods.
+    function fil(eve){
+        return eve
+        .filter(fig=>fig%2!==0)
+
+       .reduce((sum,fig)=>sum+fig,0);
+       
+        
+    }
+    const nums=[1,2,3,4,5,6]
+    const result=fil(nums)
+    console.log(result)
+
+
+</script>
+</html>
